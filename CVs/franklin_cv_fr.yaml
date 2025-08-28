@@ -1,0 +1,310 @@
+cv:
+  name: Franklin Tranié
+  location: Zurich, Suisse
+  email: franklin.tranie@gmail.com
+  # website: https://franklintra.github.io/
+  social_networks:
+    - network: LinkedIn
+      username: franklin-tranie
+    - network: GitHub
+      username: franklintra
+  sections:
+    Summary:
+      - "MSc CS @ ETH (Machine Intelligence). Chercheur en Private ML/FHE à l’EPFL et stagiaire en IA médicale au MIT Jameel Clinic. Publié une librairie open-source de hybrid-FHE."
+    Education:
+      - institution: ETH Zürich Department of Computer Science
+        area: Computer Science - Machine Intelligence
+        degree: MSc
+        location: Zurich, Suisse
+        start_date: "2025-09"
+        end_date: present
+
+      - institution: EPFL School of Computer and Communication Sciences
+        degree: BSc
+        area: Computer and Communication Sciences
+        location: Lausanne, Suisse
+        start_date: "2022-09"
+        end_date: "2025-07"
+        highlights:
+          - "Programmation, Algorithmes, Machine Learning & Data Science, Sécurité informatique, Systèmes d’exploitation, Réseaux, Mécanique quantique, Mathématiques discrètes, Calcul, Algèbre."
+
+      - institution: Lycée Saint-Louis de Gonzague
+        degree: Baccalauréat
+        area: Mathématiques et Physique
+        location: Paris, France
+        start_date: "2018-09"
+        end_date: "2022-07"
+        highlights:
+          - "2× Concours national de mathématiques Animaths (Top 100)."
+
+    Research:
+      - company: EPFL Scalable Computing Systems (SaCS) Lab
+        position: Chercheur
+        location: Lausanne, Suisse
+        start_date: "2025-02"
+        end_date: "2025-09"
+        highlights:
+          - "Co-conception de **Safhire**, un schéma hybrid FHE (Fully Homomorphic Encryption) éliminant le bootstrapping serveur en déportant les non-linéarités côté client."
+          - "Réduction de latence de **10×** vs approches d’inférence FHE antérieures sur des benchmarks standards."
+          - "Co-auteur principal de *Practical and Private ML Inference with Hybrid FHE* (sous revue à USENIX Security ’26)."
+    
+      - company: MIT CSAIL at Jameel Clinic
+        position: Stagiaire de recherche
+        location: Boston, MA, États-Unis
+        start_date: "2024-08"
+        end_date: "2024-10"
+        highlights:
+          - "Amélioration du modèle Sybil de prédiction du cancer sur CT basse dose, **AUC 0.76 → 0.85** en validation."
+          - "Implémentation d’une **dose-modulated layer** améliorant la précision pour des doses variables."
+          - "Accélération du cycle expérimental ~**10×** via cache et optimisations de chargement de données."
+          - "Travail en test clinique avec un hôpital partenaire en Italie."
+
+    Work Experience & Projects:
+      - company: Stealth
+        position: Co-Founder & CEO
+        location: Paris, France
+        start_date: "2025-06"
+        end_date: present
+        highlights:
+          - "Entretien avec Y Combinator S25 ; échanges 1:1 en cours avec un partner durant l’été 2025."
+          - "Offres reçues d’Entrepreneur First (Paris)."
+
+      - company: Opera Groupe
+        position: AI Contractor
+        location: Paris, France
+        start_date: "2025-08"
+        end_date: "2025-09"
+        highlights:
+          - "Refonte d’une application d’état des lieux avec fonctionnalités IA pour éviter les erreurs."
+          - "Intégration d’un **agent IA** pour le remplissage automatique et de **vision** pour la classification de dommages."
+          - "Permis à des non-experts de réaliser des évaluations au niveau pro grâce à l’assistance IA."
+
+      - company: EPFL Spacecraft Team
+        position: Responsable Télécom – Projet étudiant
+        location: Lausanne, Suisse
+        start_date: "2023-09"
+        end_date: "2024-02"
+        highlights:
+          - "Pilotage télécom pour le CubeSat CHESS ; conception du logiciel sol et d’un simulateur continu de **link-budget** pour évaluer la fiabilité des communications selon orbites et antennes."
+
+      - company: Uplacraft Video Games
+        position: Fondateur & CEO (~500 utilisateurs/jour)
+        location: Paris, France (Remote)
+        start_date: "2017-01"
+        end_date: "2021-12"
+        highlights:
+          - "Création et croissance d’un mod Minecraft multijoueur à ~**500 DAU** ; direction d’une **équipe de 20** (produit, marketing, modération)."
+
+    Open-Source Contributions:
+      - company: EPFL SaCS Lab / Supersayan
+        position: Core Library Developer
+        location: Lausanne, Suisse
+        start_date: "2025-02"
+        end_date: "2025-09"
+        highlights:
+          - "Open-source d’une [bibliothèque Python](https://github.com/supersayan-labs/supersayan) convertissant des modèles PyTorch arbitraires en équivalents hybrid-FHE ; implémentation compagnon pour un futur papier."
+          - "Optimisations haut débit (fast ciphertext packing, kernels GPU parallèles)."
+          - "Approche exposée via une API **drop-in** en trois lignes, rendant les expériences facilement reproductibles."
+
+      - company: SmolVLA Dataset / Hugging Face / Open-Source
+        position: Dataset Curator & Tool Developer
+        location: Remote
+        start_date: "2025-08"
+        end_date: "2025-08"
+        highlights:
+          - "Curation et validation du dataset SmolVLA v1."
+          - "Fusion de **540** jeux de données sources en un dataset VLA robotique open-source complet sur Hugging Face."
+          - "Publication d’un téléchargeur Python `LeRobotDataset` (cache parquet)."
+          - "Liens : [Hugging Face Dataset](https://huggingface.co/datasets/SmolVLADataset/SmolVLADataset) · [GitHub](https://github.com/SmolVLADataset/smolvladataset) · [PyPi](https://pypi.org/project/smolvladataset/) · [Original Paper](https://arxiv.org/abs/2506.01844)"
+
+      - company: ElevenLabs (open-source)
+        position: Open-source Contributor
+        location: Remote
+        start_date: "2025-07"
+        end_date: "2025-07"
+        highlights:
+          - "Co-auteur d’un [commit fusionné](https://github.com/elevenlabs/elevenlabs-android/commit/f01b3f29dee68cd553aa15df4ed5a20eb5bcbac2) ajoutant la prise en charge d’un outil client **fire-and-forget** dans le SDK `elevenlabs-android`."
+
+      - company: Speech-to-PDF (open-source)
+        position: Creator & Maintainer
+        location: Remote
+        start_date: "2025-08"
+        end_date: "2025-09"
+        highlights:
+          - "Création de [speech-to-pdf](https://github.com/franklintra/speech-to-pdf), interface SaaS full-stack de conversion audio → PDF."
+          - "Pensé pour des usages juridiques/médicaux, permettant à des non-techniciens de transcrire et formater de l’audio."
+          - "Solution déployable avec mise en forme automatique et traitements par lots."
+
+    Technical Skills:
+      - label: Langages de programmation
+        details: "Python ; Java ; C ; C++ ; Node.js ; Bash ; Julia"
+      - label: ML & IA
+        details: "PyTorch ; PyTorch Lightning ; scikit-learn ; Run.AI ; optimisation & distillation de modèles"
+      - label: Data Science & Analytics
+        details: "NumPy ; pandas ; matplotlib ; Seaborn ; SQL"
+      - label: MLOps & Déploiement
+        details: "Docker ; Kubernetes ; Git ; CI/CD ; parallélisation GPU"
+      - label: Systèmes & Réseaux
+        details: "Linux/Unix ; communications temps réel (link budgets satellites, décodage ADS-B)"
+      - label: Autres outils & compétences
+        details: "CUDA ; plateformes cloud (AWS, GCP)"
+
+    Additional Information:
+      - label: Langues
+        details: "Français (natif) ; Anglais (bilingue · TOEFL 112/120) ; Espagnol (intermédiaire)"
+      - label: Hackathons
+        details: "Vainqueur à plusieurs reprises (Mistral · Hugging Face · Entrepreneur First · LLM Hack · etc.)"
+      - label: Sports
+        details: "Compétitions de tennis ; Ski alpin (championnats de France) ; 2× finisher marathon ; Natation (8 km Salina → Lipari, août 2022) ; Préparation Ironman (objectif été 2026)"
+
+
+design:
+  theme: sb2nov
+  page:
+    size: us-letter
+    top_margin: 2cm
+    bottom_margin: 2cm
+    left_margin: 2cm
+    right_margin: 2cm
+    show_page_numbering: true
+    show_last_updated_date: false
+  colors:
+    text: rgb(0, 0, 0)
+    name: rgb(0, 0, 0)
+    connections: rgb(0, 0, 0)
+    section_titles: rgb(0, 0, 0)
+    links: rgb(0, 79, 144)
+    last_updated_date_and_page_numbering: rgb(128, 128, 128)
+  text:
+    font_family: New Computer Modern
+    font_size: 10pt
+    leading: 0.6em
+    alignment: justified
+    date_and_location_column_alignment: right
+  links:
+    underline: true
+    use_external_link_icon: false
+  header:
+    name_font_family: New Computer Modern
+    name_font_size: 30pt
+    name_bold: true
+    photo_width: 3.5cm
+    vertical_space_between_name_and_connections: 0.7cm
+    vertical_space_between_connections_and_first_section: 0.7cm
+    horizontal_space_between_connections: 0.5cm
+    connections_font_family: New Computer Modern
+    separator_between_connections: ''
+    use_icons_for_connections: true
+    alignment: center
+  section_titles:
+    type: with-full-line
+    font_family: New Computer Modern
+    font_size: 1.4em
+    bold: true
+    small_caps: false
+    line_thickness: 0.5pt
+    vertical_space_above: 0.5cm
+    vertical_space_below: 0.3cm
+  entries:
+    date_and_location_width: 4.15cm
+    left_and_right_margin: 0.2cm
+    horizontal_space_between_columns: 0.1cm
+    vertical_space_between_entries: 1.2em
+    allow_page_break_in_sections: true
+    allow_page_break_in_entries: true
+    short_second_row: false
+    show_time_spans_in: []
+  highlights:
+    bullet: ◦
+    top_margin: 0.25cm
+    left_margin: 0.4cm
+    vertical_space_between_highlights: 0.25cm
+    horizontal_space_between_bullet_and_highlight: 0.5em
+    summary_left_margin: 0cm
+  entry_types:
+    one_line_entry:
+      template: '**LABEL:** DETAILS'
+    education_entry:
+      main_column_first_row_template: |-
+        **INSTITUTION**
+        *DEGREE in AREA*
+      degree_column_template:
+      degree_column_width: 1cm
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: |-
+        *LOCATION*
+        *DATE*
+    normal_entry:
+      main_column_first_row_template: '**NAME**'
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: |-
+        *LOCATION*
+        *DATE*
+    experience_entry:
+      main_column_first_row_template: |-
+        **POSITION**
+        *COMPANY*
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: |-
+        *LOCATION*
+        *DATE*
+    publication_entry:
+      main_column_first_row_template: '**TITLE**'
+      main_column_second_row_template: |-
+        AUTHORS
+        URL (JOURNAL)
+      main_column_second_row_without_journal_template: |-
+        AUTHORS
+        URL
+      main_column_second_row_without_url_template: |-
+        AUTHORS
+        JOURNAL
+      date_and_location_column_template: DATE
+locale:
+  language: en
+  phone_number_format: national
+  #page_numbering_template: NAME - Page PAGE_NUMBER of TOTAL_PAGES
+  page_numbering_template: PAGE_NUMBER / TOTAL_PAGES
+  last_updated_date_template: Last updated in TODAY
+  date_template: MONTH_ABBREVIATION YEAR
+  month: month
+  months: months
+  year: year
+  years: years
+  present: present
+  to: –
+  abbreviations_for_months:
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - June
+    - July
+    - Aug
+    - Sept
+    - Oct
+    - Nov
+    - Dec
+  full_names_of_months:
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+rendercv_settings:
+  date: '2025-03-01'
+  bold_keywords: []

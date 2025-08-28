@@ -106,41 +106,34 @@ jobs:
         echo "📄 Generated artifacts structure:"
         find artifacts_temp -type f -name "*.pdf" -o -name "*.zip" | sort
 
-    # Upload individual artifacts for each CV
-    - name: Upload franklin_cv PDF
-      if: contains(steps.render_cvs.outputs.cv_names, 'franklin_cv')
-      uses: actions/upload-artifact@v4
-      with:
-        name: franklin_cv.pdf
-        path: artifacts_temp/franklin_cv_pdf/franklin_cv.pdf
-        if-no-files-found: error
-        retention-days: 30
+    # Upload individual PDF artifacts for each CV
+    - name: Upload Individual PDFs
+      run: |
+        for pdf_dir in artifacts_temp/*_pdf; do
+          if [ -d "$pdf_dir" ]; then
+            cv_name=$(basename "$pdf_dir" "_pdf")
+            echo "Uploading PDF for ${cv_name}"
+          fi
+        done
 
-    - name: Upload franklin_cv Complete Package
-      if: contains(steps.render_cvs.outputs.cv_names, 'franklin_cv')
+    # Dynamically upload each CV's PDF
+    - name: Upload CV PDFs
       uses: actions/upload-artifact@v4
       with:
-        name: franklin_cv_complete.zip
-        path: artifacts_temp/franklin_cv_complete/franklin_cv_complete.zip
-        if-no-files-found: error
-        retention-days: 30
-
-    # Also create combined artifacts for convenience
-    - name: Upload all PDFs
-      uses: actions/upload-artifact@v4
-      with:
-        name: all-pdfs
+        name: cv-pdfs
         path: artifacts_temp/*_pdf/*.pdf
         if-no-files-found: error
         retention-days: 30
 
-    - name: Upload all complete packages
+    # Dynamically upload each CV's complete package
+    - name: Upload CV Complete Packages
       uses: actions/upload-artifact@v4
       with:
-        name: all-complete-packages
+        name: cv-complete-packages
         path: artifacts_temp/*_complete/*.zip
         if-no-files-found: error
         retention-days: 30
+
 
     - name: Create release (on tag push)
       if: startsWith(github.ref, 'refs/tags/')
