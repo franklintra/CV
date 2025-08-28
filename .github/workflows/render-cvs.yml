@@ -1,0 +1,153 @@
+name: Render CVs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'CVs/**.yaml'
+      - 'CVs/**.yml'
+      - '.github/workflows/render-cvs.yml'
+      - 'uv.lock'
+      - 'pyproject.toml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'CVs/**.yaml'
+      - 'CVs/**.yml'
+      - 'uv.lock'
+      - 'pyproject.toml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+      with:
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+
+    - name: Install dependencies
+      run: |
+        uv sync --frozen
+
+    - name: Create output directories
+      run: |
+        mkdir -p rendered_cvs
+        mkdir -p artifacts_temp
+
+    - name: Render all CVs and prepare artifacts
+      id: render_cvs
+      run: |
+        cv_names=""
+        for cv_file in CVs/*.yaml CVs/*.yml; do
+          if [ -f "$cv_file" ]; then
+            filename=$(basename "$cv_file" .yaml)
+            filename=$(basename "$filename" .yml)
+            echo "Rendering $cv_file..."
+            
+            # Render the CV
+            uv run rendercv render "$cv_file" --output-folder-name "rendered_cvs/${filename}"
+            
+            # Check if rendering was successful
+            if [ $? -eq 0 ]; then
+              echo "✅ Successfully rendered $filename"
+              
+              # Remove __pycache__ directories
+              find "rendered_cvs/${filename}" -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+              
+              # Find and copy PDF to artifacts_temp for individual upload
+              pdf_file=$(find "rendered_cvs/${filename}" -name "*.pdf" -type f | head -n 1)
+              if [ -n "$pdf_file" ]; then
+                mkdir -p "artifacts_temp/${filename}_pdf"
+                cp "$pdf_file" "artifacts_temp/${filename}_pdf/${filename}.pdf"
+                echo "📄 Found PDF: $(basename "$pdf_file")"
+              else
+                echo "⚠️ Warning: No PDF found for ${filename}"
+              fi
+              
+              # Create a complete zip for this CV (excluding __pycache__)
+              mkdir -p "artifacts_temp/${filename}_complete"
+              cd rendered_cvs
+              zip -r "../artifacts_temp/${filename}_complete/${filename}_complete.zip" "${filename}" -x "*/__pycache__/*" "*__pycache__*"
+              cd ..
+              
+              echo "📦 Created artifacts for ${filename}"
+              
+              # Add to list of CV names
+              if [ -z "$cv_names" ]; then
+                cv_names="${filename}"
+              else
+                cv_names="${cv_names},${filename}"
+              fi
+            else
+              echo "❌ Failed to render $filename"
+              exit 1
+            fi
+          fi
+        done
+        
+        # Export the CV names for use in matrix
+        echo "cv_names=${cv_names}" >> $GITHUB_OUTPUT
+        echo "📝 Processed CVs: ${cv_names}"
+
+    - name: List generated artifacts
+      run: |
+        echo "📄 Generated artifacts structure:"
+        find artifacts_temp -type f -name "*.pdf" -o -name "*.zip" | sort
+
+    # Upload individual artifacts for each CV
+    - name: Upload franklin_cv PDF
+      if: contains(steps.render_cvs.outputs.cv_names, 'franklin_cv')
+      uses: actions/upload-artifact@v4
+      with:
+        name: franklin_cv.pdf
+        path: artifacts_temp/franklin_cv_pdf/franklin_cv.pdf
+        if-no-files-found: error
+        retention-days: 30
+
+    - name: Upload franklin_cv Complete Package
+      if: contains(steps.render_cvs.outputs.cv_names, 'franklin_cv')
+      uses: actions/upload-artifact@v4
+      with:
+        name: franklin_cv_complete.zip
+        path: artifacts_temp/franklin_cv_complete/franklin_cv_complete.zip
+        if-no-files-found: error
+        retention-days: 30
+
+    # Also create combined artifacts for convenience
+    - name: Upload all PDFs
+      uses: actions/upload-artifact@v4
+      with:
+        name: all-pdfs
+        path: artifacts_temp/*_pdf/*.pdf
+        if-no-files-found: error
+        retention-days: 30
+
+    - name: Upload all complete packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: all-complete-packages
+        path: artifacts_temp/*_complete/*.zip
+        if-no-files-found: error
+        retention-days: 30
+
+    - name: Create release (on tag push)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          artifacts_temp/*_pdf/*.pdf
+          artifacts_temp/*_complete/*.zip
+        fail_on_unmatched_files: true
+        generate_release_notes: true
