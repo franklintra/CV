@@ -50,7 +50,7 @@ cv:
         highlights:
           - Co-designed **Safhire**, a hybrid FHE (Fully Homomorphic Encryption) scheme that eliminated server bootstrapping by offloading non-linearities to the client.
           - Achieved ~**10×** latency reduction versus prior encrypted inference approaches on standard benchmarks.
-          - Lead co-author *Practical and Private ML Inference with Hybrid FHE* (under review USENIX Security '26).
+          - Lead co-author *[Practical and Private ML Inference with Hybrid FHE](https://arxiv.org/abs/2509.01253)* (under review USENIX Security '26).
     
       - company: MIT CSAIL at Jameel Clinic
         position: Research Intern
@@ -110,16 +110,17 @@ cv:
           - Implemented high-throughput optimizations (fast ciphertext packing, GPU-parallel kernels).
           - Exposed the approach in a simple three-line API, making experiments reproducible for researchers.
 
-      - company: SmolVLA Dataset / Hugging Face / Open-Source
-        position: Dataset Curator & Tool Developer
-        location: Remote
-        start_date: "2025-08"
-        end_date: "2025-08"
-        highlights:
-          - Curated and validated the SmolVLA v1 dataset.
-          - Merged **540** source datasets into comprehensive open-source VLA robotic dataset on Hugging Face.
-          - Released a Python `LeRobotDataset` downloader (parquet-cached).
-          - "Links: [Hugging Face Dataset](https://huggingface.co/datasets/SmolVLADataset/SmolVLADataset) · [GitHub](https://github.com/SmolVLADataset/smolvladataset) · [PyPi](https://pypi.org/project/smolvladataset/) · [Original Paper](https://arxiv.org/abs/2506.01844)"
+      # - company: SmolVLA Dataset / Hugging Face / Open-Source
+      #   position: Dataset Curator & Tool Developer
+      #   location: Remote
+      #   start_date: "2025-08"
+      #   end_date: "2025-08"
+      #   highlights:
+      #     - Curated and validated the SmolVLA v1 dataset.
+      #     - Merged **540** source datasets into comprehensive open-source VLA robotic dataset on Hugging Face.
+      #     - Released a Python `LeRobotDataset` downloader (parquet-cached).
+      #     - "Links: [Hugging Face Dataset](https://huggingface.co/datasets/SmolVLADataset/SmolVLADataset) · [GitHub](https://github.com/SmolVLADataset/smolvladataset) · [PyPi](https://pypi.org/project/smolvladataset/) · [Original Paper](https://arxiv.org/abs/2506.01844)"
+      
       - company: ElevenLabs (open-source)
         position: Open-source Contributor
         location: Remote
@@ -128,15 +129,15 @@ cv:
         highlights:
           - Co-authored [merged commit](https://github.com/elevenlabs/elevenlabs-android/commit/f01b3f29dee68cd553aa15df4ed5a20eb5bcbac2) adding **fire-and-forget client tool** support to `elevenlabs-android` SDK.
 
-      - company: Speech-to-PDF (open-source)
-        position: Creator & Maintainer
-        location: Remote
-        start_date: "2025-08"
-        end_date: "2025-09"
-        highlights:
-          - Built [speech-to-pdf](https://github.com/franklintra/speech-to-pdf), a full-stack SaaS web interface for audio-to-PDF conversion.
-          - Designed for legal/medical use cases, enabling non-technical users to transcribe and format audio.
-          - Created deployable solution with automatic formatting and batch processing capabilities.
+      # - company: Speech-to-PDF (open-source)
+      #   position: Creator & Maintainer
+      #   location: Remote
+      #   start_date: "2025-08"
+      #   end_date: "2025-09"
+      #   highlights:
+      #     - Built [speech-to-pdf](https://github.com/franklintra/speech-to-pdf), a full-stack SaaS web interface for audio-to-PDF conversion.
+      #     - Designed for legal/medical use cases, enabling non-technical users to transcribe and format audio.
+      #     - Created deployable solution with automatic formatting and batch processing capabilities.
 
 
     Technical Skills:
