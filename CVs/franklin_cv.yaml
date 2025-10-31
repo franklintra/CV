@@ -10,7 +10,7 @@ cv:
       username: franklintra
   sections:
     Summary:
-      - "MSc CS @ ETH (Machine Intelligence). Private ML/FHE researcher at EPFL and medical AI intern at MIT Jameel Clinic. Built open-source hybrid-FHE library."
+      - "MSc CS @ ETH (Machine Intelligence). Private ML/FHE researcher at EPFL and medical AI intern at MIT Jameel Clinic. Built open-source hybrid-FHE library. Building AI agents reliably to automate administrative jobs."
     Education:
       - institution: ETH Zürich Department of Computer Science
         area: Computer Science - Machine Intelligence
@@ -64,24 +64,35 @@ cv:
           - Work in clinical testing with a hospital partner in Italy.
 
     Work Experience & Projects:
-      - company: Stealth
-        position: Co-Founder & CEO
-        location: Paris, France
-        start_date: "2025-06"
+      # - company: Stealth
+      #   position: Co-Founder & CEO
+      #   location: Paris, France
+      #   start_date: "2025-06"
+      #   end_date: "present"
+      #   highlights:
+      #     - Interviewed by Y Combinator S25; ongoing 1:1s with a partner through Summer 2025.
+      #     - Received offers from Entrepreneur First (Paris).
+
+      - company: ClarityCare.ai
+        position: AI & Software Engineering Contractor
+        location: Remote
+        start_date: "2025-09"
         end_date: "present"
         highlights:
-          - Interviewed by Y Combinator S25; ongoing 1:1s with a partner through Summer 2025.
-          - Received offers from Entrepreneur First (Paris).
+          - Stabilized production system that previously broke under minimal load; refactored backend to support significantly higher user volume, enabling platform to scale from handful of doctors to production capacity.
+          - Designed and deployed Celery-based orchestration framework with priority queues for LLM coordination, respecting API rate limits and enabling reliable scaling.
+          - Built custom monitoring dashboard providing real-time observability of task execution, LLM calls, and resource utilization for operational transparency.
+          - Reengineered agent architecture to minimize redundant LLM calls while maintaining accuracy; delivered **60× throughput improvement** (10 cases/hour → 10 cases/minute), enabling production viability.
 
       - company: Opera Groupe
-        position: AI Contractor
+        position: AI Engineering Contractor
         location: Paris, France
         start_date: "2025-08"
-        end_date: "2025-09"
+        end_date: "2025-10"
         highlights:
-          - Redesigned property inventory app with AI-powered features to democratize professional-grade inspections.
-          - Integrated **voice agent** for automated field completion and **vision** for damage detection and classification.
-          - Enabled non-experts to conduct property assessments at professional standards through AI assistance.
+          - Integrated AI capabilities into existing property inventory application, enabling non-experts to conduct professional-grade inspections and expanding service delivery capacity.
+          - Implemented multimodal AI system combining voice transcription for automated field completion and computer vision for damage detection and classification.
+          - Delivered production-ready solution reducing inspection time and training requirements while maintaining professional assessment quality.
 
       - company: EPFL Spacecraft Team
         position: Telecom Task Lead - Student Project
@@ -121,13 +132,13 @@ cv:
       #     - Released a Python `LeRobotDataset` downloader (parquet-cached).
       #     - "Links: [Hugging Face Dataset](https://huggingface.co/datasets/SmolVLADataset/SmolVLADataset) · [GitHub](https://github.com/SmolVLADataset/smolvladataset) · [PyPi](https://pypi.org/project/smolvladataset/) · [Original Paper](https://arxiv.org/abs/2506.01844)"
       
-      - company: ElevenLabs (open-source)
-        position: Open-source Contributor
-        location: Remote
-        start_date: "2025-07"
-        end_date: "2025-07"
-        highlights:
-          - Co-authored [merged commit](https://github.com/elevenlabs/elevenlabs-android/commit/f01b3f29dee68cd553aa15df4ed5a20eb5bcbac2) adding **fire-and-forget client tool** support to `elevenlabs-android` SDK.
+      # - company: ElevenLabs (open-source)
+      #   position: Open-source Contributor
+      #   location: Remote
+      #   start_date: "2025-07"
+      #   end_date: "2025-07"
+      #   highlights:
+      #     - Co-authored [merged commit](https://github.com/elevenlabs/elevenlabs-android/commit/f01b3f29dee68cd553aa15df4ed5a20eb5bcbac2) adding **fire-and-forget client tool** support to `elevenlabs-android` SDK.
 
       # - company: Speech-to-PDF (open-source)
       #   position: Creator & Maintainer
